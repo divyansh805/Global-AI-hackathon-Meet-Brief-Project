@@ -1,0 +1,98 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #f8fafc;
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+html.dark body {
+  background-color: #090e1a;
+  color: #f1f5f9;
+}
+
+/* Print-optimized styling for the meeting briefing */
+@media print {
+  @page {
+    margin: 14mm 15mm;
+    size: auto;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 11pt;
+  }
+
+  .lg\:pl-64 {
+    padding-left: 0 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .print-container {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .report-document {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .report-document * {
+    color: #0f172a !important;
+    background-color: transparent !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: none !important;
+  }
+
+  .report-document .print-badge {
+    border: 1px solid #94a3b8 !important;
+    background-color: #f8fafc !important;
+  }
+
+  .report-document a,
+  .report-document a * {
+    color: #1d4ed8 !important;
+    text-decoration: underline;
+  }
+
+  .report-section-heading {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .report-item-avoid,
+  .page-break-inside-avoid {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}

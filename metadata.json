@@ -1,0 +1,6 @@
+{
+  "name": "MeetBrief - Meeting Intelligence & Research Agent",
+  "description": "Tavily and Gemini powered meeting research agent providing source-backed briefings, 30-day updates, talking points, and strategic questions before your meetings.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
